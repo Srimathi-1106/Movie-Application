@@ -1,0 +1,139 @@
+/* login register add movie forms css */
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  margin-top:10px;
+  text-align: center;
+  border:2px rgb(18, 13, 13) solid;
+  padding:20px;
+  box-shadow:3px 3px 4px rgb(152, 68, 68),-3px -3px 4px rgb(163, 69, 69);
+  width:300px;
+  border-radius:30px;
+}
+.portal{
+  display:flex;
+  flex-direction:column;
+}
+
+.button.MuiButton-root {
+  color: white;
+  background-color: rgb(133, 0, 0);
+  border: 1px solid rgb(75, 0, 0);
+}
+
+.button.MuiButton-root:hover {
+  background-color: rgb(228, 121, 121);
+  color:rgb(0, 0, 0);
+  border: 1px solid rgb(75, 0, 0);
+}
+
+/* nav bar css */
+
+.nav{
+  background-color: #850000;
+}
+
+.button-group{
+  display:flex;
+  flex-direction:end;
+  align-items:center;
+  gap:30px;
+}
+
+
+/* 
+.textfield{
+  border:rgb(133, 0, 0) solid 2px;
+}
+
+label{
+  color:rgb(133, 0, 0);
+} */
+
+/* movie card css */
+
+.MuiPaper-root.movie-container{
+  width:250px;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  /* border:#000000 2px solid; */
+  margin-top:20px;
+  margin-bottom: 10px;
+  box-shadow:2px 2px 4px rgb(133,0,0),-2px -2px 4px rgb(133,0,0);
+  border-radius:30px;
+}
+
+.movie-poster{
+  width:250px;
+  height:300px;
+  border-radius:30px;
+  align-items:center;
+  object-fit:fill;
+}
+
+.movie-spec{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.movie-summary{
+  text-align:justify;
+  margin-top:-10px;
+  overflow-y:auto;
+  max-height:70px;
+  margin-bottom:5px;
+}
+
+.like-dislike{
+  background-color:inherit;
+  border:none;
+} 
+
+.card.MuiCardContent-root{
+  padding:0px;
+}
+
+.movie-list{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: start;
+  gap:30px;
+}
+
+
+
+
+
+/* Width */
+::-webkit-scrollbar {
+  width: 12px; /* adjust as needed */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; /* or any color you prefer */
+  border-radius:30px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius:30px; 
+}  
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a70000;
+}
+
+.MuiFormLabel-root{
+  color:#850000
+}
