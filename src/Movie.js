@@ -10,6 +10,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete'
+import { API } from './global';
 
 
 export default function Movie({ movieTake,getMovies }) {
@@ -17,7 +18,7 @@ export default function Movie({ movieTake,getMovies }) {
     const navigate=useNavigate();
 
     const deleteMovie = (id) =>{
-        fetch((`https://65f16b78034bdbecc762700b.mockapi.io/Movies/${id}`),{
+        fetch((`${API}/delete/${id}`),{  //https://65f16b78034bdbecc762700b.mockapi.io/Movies/${id}
             method:"DELETE"
         })
         .then(()=>getMovies())
@@ -33,7 +34,7 @@ export default function Movie({ movieTake,getMovies }) {
                 <IconButton color="error" aria-label="Toggle-Description" onClick={()=>setShow(!show)}>
                     {show?<ExpandLessIcon fontSize="medium"/>:<ExpandMoreIcon fontSize="medium"/>}
                 </IconButton>
-                <IconButton color="error" aria-label="Movie-info" onClick={() => navigate(`/portal/view/${movieTake.id}`)}>
+                <IconButton color="error" aria-label="Movie-info" onClick={() => navigate(`/portal/view/${movieTake._id}`)}>
                     <InfoIcon  fontSize="small"/>
                 </IconButton>
             </h2>
@@ -43,10 +44,10 @@ export default function Movie({ movieTake,getMovies }) {
         {show?<p className='movie-summary'>{movieTake.summary}</p>:null}
         <CardActions>
             <Counter/>
-            <IconButton sx={{marginLeft:"auto"}} aria-label="editMovie" onClick={()=>navigate(`/portal/edit/${movieTake.id}`)}>
+            <IconButton sx={{marginLeft:"auto"}} aria-label="editMovie" onClick={()=>navigate(`/portal/edit/${movieTake._id}`)}>
                 <EditIcon color="error"/>
             </IconButton>
-            <IconButton sx={{marginLeft:"auto"}} aria-label="deleteMovie" onClick={()=>deleteMovie(movieTake.id)}>
+            <IconButton sx={{marginLeft:"auto"}} aria-label="deleteMovie" onClick={()=>deleteMovie(movieTake._id)}>
                 <DeleteIcon color="error"/>
             </IconButton>
         </CardActions>

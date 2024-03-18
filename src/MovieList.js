@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Movie from './Movie'
+import { API } from './global';
 
 export default function MovieList() {
     const [movie,setMovie] =useState([]);
 
     const getMovies = () => {
-        fetch("https://65f16b78034bdbecc762700b.mockapi.io/Movies",{
+        fetch(`${API}/get`,{  //https://65f16b78034bdbecc762700b.mockapi.io/Movies
             method:"GET",
         })
         .then((data)=>data.json())

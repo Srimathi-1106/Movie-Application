@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useFormik} from 'formik';
 import * as yup from 'yup';
+import { API } from './global';
 
 export default function EditMovie() {
     const {id}=useParams();
@@ -12,7 +13,7 @@ export default function EditMovie() {
     const [show,setShow]=useState(false);
 
     useEffect(()=>{
-        fetch(`https://65f16b78034bdbecc762700b.mockapi.io/Movies/${id}`,{
+        fetch(`${API}/getone/${id}`,{   //https://65f16b78034bdbecc762700b.mockapi.io/Movies/${id}
             method:"GET"
         })
         .then((data)=>data.json())
@@ -58,7 +59,7 @@ function EditForm({ movie }) {
 
     const navigate=useNavigate();
     const editMovie = (updatedMovie) => {
-        fetch(`https://65f16b78034bdbecc762700b.mockapi.io/Movies/${movie.id}`,{
+        fetch(`${API}/update/${movie._id}`,{ //https://65f16b78034bdbecc762700b.mockapi.io/Movies/${movie.id}
             method:"PUT",
             body:JSON.stringify(updatedMovie),
             headers:{"Content-Type":"application/json"},
