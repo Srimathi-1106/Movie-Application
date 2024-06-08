@@ -1,1 +1,1 @@
-export const API="https://movie-application-backend-c1cib1h92.vercel.app/";
+export const API="https://movie-application-backend-p9te6zd5m.vercel.app";
