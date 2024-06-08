@@ -8,7 +8,7 @@ export default function MovieList() {
     const getMovies = () => {
         fetch(`${API}/get`,{  //https://65f16b78034bdbecc762700b.mockapi.io/Movies
             method:"GET",
-            headers: { "backend-token": localStorage['storetoken'] }
+            headers:{"backend-token":localStorage['storetoken']}
         })
         .then((data)=>data.json())
         .then((mvs)=>setMovie(mvs));
